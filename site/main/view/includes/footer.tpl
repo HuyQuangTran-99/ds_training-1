@@ -1,3 +1,4 @@
+<!-- dựng footer -->
 <footer id="footer">
 	<div class="back-top text-center" id="totop">Back to top</div>
 	<div class="container-fluid">
