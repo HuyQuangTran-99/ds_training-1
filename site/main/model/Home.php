@@ -34,7 +34,7 @@ class Home extends Main
       $this->smarty->display(LAYOUT_HOME);
     }
 
-   //  lấy chi tiết tin
+    // lấy chi tiết tin 
     function getContent() {
 
       $getidContent = $_GET['id'];
