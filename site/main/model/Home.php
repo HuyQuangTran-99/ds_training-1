@@ -3,7 +3,7 @@
 class Home extends Main
 {
 
-  // $this->smarty->clearCache('hmenu.tpl');
+
 
     private $folder_rfq;
 
@@ -14,19 +14,12 @@ class Home extends Main
 
     function getHmenu() {
 
-      //$a_main_category = $this->pdo->fetch_all("SELECT id , name FROM taxonomy ORDER BY id ASC");
-      //var_dump($a_main_category);
-      //$this->smarty->assign('a_main_category',$a_main_category);
 
       $this->smarty->display(LAYOUT_HOME);
     }
 
     function index()
     {
-      // $sr = $this->pdo->fetch_all("SELECT id , name FROM taxonomy ORDER BY id");
-      // $taxonomy_id = $_GET['taxonomy_id'];
-      // var_dump($taxonomy_id);
-
 
      // lấy danh sách tin trang chủ
       $get = $this->pdo->fetch_all("SELECT title, id ,created FROM posts ORDER by ID   Limit 0,11" );
@@ -34,7 +27,7 @@ class Home extends Main
       $this->smarty->display(LAYOUT_HOME);
     }
 
-    // lấy chi tiết tin 
+    // lấy chi tiết tin
     function getContent() {
 
       $getidContent = $_GET['id'];
