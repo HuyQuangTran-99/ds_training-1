@@ -1,4 +1,4 @@
-<!-- dựng register -->
+<!-- dựng Register -->
 <div class="login-container d-flex align-items-center justify-content-center">
 	<form class="login-form text-center" method="post" name="login-form">
 		<h1 class=" mb-5 font-weight-light text-uppercase">Resgister</h1>
