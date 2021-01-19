@@ -1,5 +1,27 @@
-<!-- xây dựng trang index -->
-<div class="index" style="height:100vh;">
+<?php
+/* Smarty version 3.1.34-dev-7, created on 2021-01-18 10:11:45
+  from 'C:\xampp\htdocs\ds_training\site\main\view\home\index.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.34-dev-7',
+  'unifunc' => 'content_6004fc71a64993_29553672',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'c524f16f14047073bd8a7b136cbd329c5fcb0944' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\ds_training\\site\\main\\view\\home\\index.tpl',
+      1 => 1610939494,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_6004fc71a64993_29553672 (Smarty_Internal_Template $_smarty_tpl) {
+?><div class="index" style="height:100vh;">
 <section class="banner-header">
 	<div class="container-fluid container-menu">
 		<div class="row row-content">
@@ -9,11 +31,20 @@
 
 					<div class="accordion-menu">
 						<ul class="accordion">
-							{foreach from=$get item=v }
+							<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['get']->value, 'v');
+$_smarty_tpl->tpl_vars['v']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['v']->value) {
+$_smarty_tpl->tpl_vars['v']->do_else = false;
+?>
 							<li>
-								<a class="toggle" href="?mod=home&site=getContent&id={$v.id}">{$v.title}</a>
+								<a class="toggle" href="?mod=home&site=getContent&id=<?php echo $_smarty_tpl->tpl_vars['v']->value['id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['v']->value['title'];?>
+</a>
 							</li>
-							{/foreach}
+							<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 						</ul>
 					</div>
 
@@ -53,7 +84,8 @@
 
 </div>
 
-<script>
+<?php echo '<script'; ?>
+>
 
 /// changeLink
 
@@ -89,7 +121,8 @@ let slides = document.querySelectorAll('.slide'),
     prev = document.querySelector('.prev');
 
 slides.forEach(function(slide, index) {
-    slide.style.left = `${index * 100}%`;
+    slide.style.left = `$<?php echo 'index'*100;?>
+%`;
 });
 
 var counter = 0;
@@ -115,9 +148,13 @@ function carousel() {
     }
 
     slides.forEach(function(slide){
-      slide.style.transform = `translateX(-${counter * 100}%)`;
+      slide.style.transform = `translateX(-$<?php echo 'counter'*100;?>
+%)`;
     });
 }
 ////
 
-</script>
+<?php echo '</script'; ?>
+>
+<?php }
+}

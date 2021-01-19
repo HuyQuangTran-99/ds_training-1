@@ -24,6 +24,8 @@
 
 <link href="{$arg.stylesheet}css/custom.css" rel="stylesheet">
 <link href="{$arg.stylesheet}css/style.css" rel="stylesheet">
+<link href="{$arg.stylesheet}css/style0.css" rel="stylesheet">
+
 <link href="{$arg.stylesheet}css/mobile.css" rel="stylesheet">
 
 
@@ -37,6 +39,10 @@
 <script>var str_arg = '{$js_arg}';</script>
 <script src="{$arg.stylesheet}js/custom.js"></script>
 
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
+
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -45,12 +51,16 @@
     <![endif]-->
 </head>
 <body>
-	
+
 	{include file='../includes/header.tpl'}
 
 	{include file=$content}
 
 	{include file='../includes/footer.tpl'}
-	
+	{include file='../includes/hmenu.tpl'   }
+
+	<script>
+	</script>
+
 </body>
 </html>

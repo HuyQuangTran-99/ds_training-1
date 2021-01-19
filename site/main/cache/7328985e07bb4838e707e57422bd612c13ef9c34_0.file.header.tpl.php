@@ -1,4 +1,27 @@
-<!-- trang header -->
+<?php
+/* Smarty version 3.1.34-dev-7, created on 2021-01-19 10:11:41
+  from 'C:\xampp\htdocs\ds_training\site\main\view\includes\header.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.34-dev-7',
+  'unifunc' => 'content_60064ded30f5f3_67607548',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '7328985e07bb4838e707e57422bd612c13ef9c34' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\ds_training\\site\\main\\view\\includes\\header.tpl',
+      1 => 1611025139,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_60064ded30f5f3_67607548 (Smarty_Internal_Template $_smarty_tpl) {
+?><!-- trang header -->
 <header>
 	<div id="head_top">
 		<div class="container-fluid">
@@ -20,18 +43,22 @@
 					</div>
 				</div>
 				<div class="form-search d-block d-sm-none">
-					<input type="text" id="mKeyword" value="{$main_filter.key|default:''}" placeholder="Search Daisan">
+					<input type="text" id="mKeyword" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['main_filter']->value['key'])===null||$tmp==='' ? '' : $tmp);?>
+" placeholder="Search Daisan">
 					<button class="btn search-btn" onclick="msearch();">
 						<i class="fa fa-search"></i>
 					</button>
 				</div>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<div class="form-search input-group my-2 my-lg-0">
-						<input type="hidden" id="filter_cate_id" value="{$main_filter.t|default:0}">
+						<input type="hidden" id="filter_cate_id" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['main_filter']->value['t'])===null||$tmp==='' ? 0 : $tmp);?>
+">
 						<div class="input-group-prepend">
-							<button class="open-cate">{$main_filter.t_txt|default:'Tất cả'} <i class="fa fa-caret-down"></i></button>
+							<button class="open-cate"><?php echo (($tmp = @$_smarty_tpl->tpl_vars['main_filter']->value['t_txt'])===null||$tmp==='' ? 'Tất cả' : $tmp);?>
+ <i class="fa fa-caret-down"></i></button>
 						</div>
-						<input class="form-control" type="text" id="Keyword" value="{$main_filter.key|default:''}">
+						<input class="form-control" type="text" id="Keyword" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['main_filter']->value['key'])===null||$tmp==='' ? '' : $tmp);?>
+">
 						<button class="btn search-btn" type="button" onclick="search();"><i class="fa fa-search fa-fw"></i></button>
 
 						<div class="cate-in-search">
@@ -43,7 +70,11 @@
 									</div>
 
 									<div class="col-4">
-										<a href="javascript:void(0);" onclick="set_search_cate({$v.id});" id="search_cate_{$v.id}" class="line-1 mb-2 d-block" title="{$v.name}">{$v.name}</a>
+										<a href="javascript:void(0);" onclick="set_search_cate(<?php echo $_smarty_tpl->tpl_vars['v']->value['id'];?>
+);" id="search_cate_<?php echo $_smarty_tpl->tpl_vars['v']->value['id'];?>
+" class="line-1 mb-2 d-block" title="<?php echo $_smarty_tpl->tpl_vars['v']->value['name'];?>
+"><?php echo $_smarty_tpl->tpl_vars['v']->value['name'];?>
+</a>
 									</div>
 
 								</div>
@@ -55,7 +86,8 @@
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
 								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<p class="mb-0"><small>Chào, {$hcache.user.name|default:'Đăng nhập'}</small></p>
+								<p class="mb-0"><small>Chào, <?php echo (($tmp = @$_smarty_tpl->tpl_vars['hcache']->value['user']['name'])===null||$tmp==='' ? 'Đăng nhập' : $tmp);?>
+</small></p>
 								Tài khoản của tôi
 							</a>
 							<div class="dropdown-menu dropdown-menu-hover dropdown-menu-right"
@@ -65,8 +97,10 @@
 								<a class="btn btn-secondary btn-block mb-3" href="?mod=home&site=resgister">Đăng ký tài khoản</a>
 
 								<a class="dropdown-item" href="?mod=account&site=orders">Quản lý mua hàng<!-- <span class="pull-right">3</span> --></a>
-								<a class="dropdown-item" href="{$arg.url_helpcenter}">Chính sách vận chuyển</a>
-								<a class="dropdown-item" href="{$arg.url_helpcenter}">Dịch vụ khách hàng</a>
+								<a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['arg']->value['url_helpcenter'];?>
+">Chính sách vận chuyển</a>
+								<a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['arg']->value['url_helpcenter'];?>
+">Dịch vụ khách hàng</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="?mod=account&site=pages">Gian hàng bán</a>
 								<!-- <a class="dropdown-item" href="#">Sản phẩm theo dõi</a> -->
@@ -85,7 +119,8 @@
 						</li>
 						<li class="nav-item nav-cart">
 							<a class="nav-link" href="?mod=product&site=cart">
-								<img src="{$arg.url_img}cart-black.png" height="30">
+								<img src="<?php echo $_smarty_tpl->tpl_vars['arg']->value['url_img'];?>
+cart-black.png" height="30">
 								<span class="cart-number" id="cart-number">0</span>
 								Cart
 							</a>
@@ -101,11 +136,15 @@
 				<div class="dropdown" id="hplace">
 					<a class="ship-location" href="javascript:void(0)" id="dropdownMenuButton" data-toggle="dropdown">
 						<span class="img-location-ship"></span>
-						Giao tới<br>{$hcache.place.name|default:'Hà Nội'}
+						Giao tới<br><?php echo (($tmp = @$_smarty_tpl->tpl_vars['hcache']->value['place']['name'])===null||$tmp==='' ? 'Hà Nội' : $tmp);?>
+
 					</a>
 					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
-						<a class="dropdown-item" href="javascript:void(0)" onclick="SetDelive({$v.Id}, '{$v.Name}');">{$v.Name}</a>
+						<a class="dropdown-item" href="javascript:void(0)" onclick="SetDelive(<?php echo $_smarty_tpl->tpl_vars['v']->value['Id'];?>
+, '<?php echo $_smarty_tpl->tpl_vars['v']->value['Name'];?>
+');"><?php echo $_smarty_tpl->tpl_vars['v']->value['Name'];?>
+</a>
 
 					</div>
 				</div>
@@ -115,13 +154,16 @@
 							<a class="nav-link py-1 line-1" href="?site=promotions&mod=product">Ưu Đãi Hôm Nay</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link py-1 line-1" href="{$arg.url_sourcing}">Yêu Cầu Báo Giá</a>
+							<a class="nav-link py-1 line-1" href="<?php echo $_smarty_tpl->tpl_vars['arg']->value['url_sourcing'];?>
+">Yêu Cầu Báo Giá</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link py-1 line-1" href="{$arg.url_helpcenter}search.html?cId=932">Bán Cùng Daisan</a>
+							<a class="nav-link py-1 line-1" href="<?php echo $_smarty_tpl->tpl_vars['arg']->value['url_helpcenter'];?>
+search.html?cId=932">Bán Cùng Daisan</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link py-1 line-1" href="{$arg.url_helpcenter}search.html?cId=898">Chính Sách Khách Hàng</a>
+							<a class="nav-link py-1 line-1" href="<?php echo $_smarty_tpl->tpl_vars['arg']->value['url_helpcenter'];?>
+search.html?cId=898">Chính Sách Khách Hàng</a>
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle py-1 line-1" data-toggle="dropdown" href="#">Các Lĩnh Vực</a>
@@ -137,7 +179,8 @@
 
 				<ul class="navbar-nav ml-md-auto d-none d-sm-block">
 					<li class="nav-item">
-						<a class="nav-link pl-2 pr-1 mx-1 py-1 font-weight-bold" href="{$arg.url_helpcenter}">
+						<a class="nav-link pl-2 pr-1 mx-1 py-1 font-weight-bold" href="<?php echo $_smarty_tpl->tpl_vars['arg']->value['url_helpcenter'];?>
+">
 							<i class="fa fa-bell-o fa-fw"></i>Trung tâm trợ giúp Daisan</a>
 					</li>
 
@@ -146,3 +189,5 @@
 		</div>
 	</div>
 </header>
+<?php }
+}

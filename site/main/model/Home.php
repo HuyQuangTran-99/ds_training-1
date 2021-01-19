@@ -3,6 +3,8 @@
 class Home extends Main
 {
 
+  // $this->smarty->clearCache('hmenu.tpl');
+
     private $folder_rfq;
 
     function __construct()
@@ -10,13 +12,73 @@ class Home extends Main
         parent::__construct();
     }
 
+    function getHmenu() {
+
+      //$a_main_category = $this->pdo->fetch_all("SELECT id , name FROM taxonomy ORDER BY id ASC");
+      //var_dump($a_main_category);
+      //$this->smarty->assign('a_main_category',$a_main_category);
+
+      $this->smarty->display(LAYOUT_HOME);
+    }
+
     function index()
     {
-        $out = array();
-        
-        $this->smarty->assign("out", $out);
-        $this->smarty->display(LAYOUT_HOME);
+      // $sr = $this->pdo->fetch_all("SELECT id , name FROM taxonomy ORDER BY id");
+      // $taxonomy_id = $_GET['taxonomy_id'];
+      // var_dump($taxonomy_id);
+
+
+      // lấy danh dách tin trong post
+      $get = $this->pdo->fetch_all("SELECT title, id ,created FROM posts ORDER by ID   Limit 0,11" );
+      $this->smarty->assign('get',$get);
+      $this->smarty->display(LAYOUT_HOME);
     }
+
+   //  lấy chi tiết tin
+    function getContent() {
+
+      $getidContent = $_GET['id'];
+      var_dump($getidContent);
+      $getContent = $this->pdo->fetch_all("SELECT * FROM posts WHERE id=".$getidContent);
+      $get = $this->pdo->fetch_all("SELECT title, id ,created FROM posts ORDER by ID DESC Limit 20" );
+      $this->smarty->assign('get',$get);
+      // lib_dump($getContent);
+
+      $this->smarty->assign('getContent',$getContent);
+
+      $this->smarty->display(LAYOUT_HOME);
+    }
+
+    function resgister() {
+
+      $this->smarty->display(LAYOUT_HOME);
+    }
+
+    function login() {
+      $this->smarty->display(LAYOUT_HOME);
+    }
+
+    function test()
+    {
+      $posts = $this->pdo->fetch_all("SELECT title ,created FROM posts ORDER BY id ASC");
+      $this->smarty->assign('posts',$posts);
+      lib_dump($posts);
+
+      $this->smarty->display(LAYOUT_HOME);
+    }
+
+    function getlist() {
+     $sr = $this->pdo->fetch_all("SELECT id , name FROM taxonomy ORDER BY id");
+     $taxonomy_id = $_GET['taxonomy_id'];
+
+     var_dump($taxonomy_id);
+     $get = $this->pdo->fetch_all("SELECT * FROM posts WHERE taxonomy_id=".$taxonomy_id);
+     lib_dump($get);
+    $this->smarty->assign('get',$get);
+    $this->smarty->assign('sr',$sr);
+    $this->smarty->display(LAYOUT_HOME);
+    }
+
 
     function errorpage()
     {
