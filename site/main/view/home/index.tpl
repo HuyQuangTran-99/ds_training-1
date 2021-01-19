@@ -1,4 +1,4 @@
-<!-- xây dựng trang index -->
+<!-- xây dựng trang chủ -->
 <div class="index" style="height:100vh;">
 <section class="banner-header">
 	<div class="container-fluid container-menu">
