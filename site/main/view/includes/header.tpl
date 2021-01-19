@@ -1,4 +1,4 @@
-<!-- trang header -->
+<!-- dựng header -->
 <header>
 	<div id="head_top">
 		<div class="container-fluid">
