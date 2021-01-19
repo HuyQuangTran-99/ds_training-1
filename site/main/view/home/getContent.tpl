@@ -1,4 +1,4 @@
-<!-- hiển thị chi tết tin và giao diện -->
+<!-- dựng trang chi tiết tin -->
 <div class="container-fluid container-content">
 	<div class="row row-content">
 		<div class="col-8 content content-heading">
