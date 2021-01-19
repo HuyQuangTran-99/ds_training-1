@@ -28,7 +28,7 @@ class Home extends Main
       // var_dump($taxonomy_id);
 
 
-      // lấy danh dách tin trong post
+     // lấy danh sách tin trang chủ
       $get = $this->pdo->fetch_all("SELECT title, id ,created FROM posts ORDER by ID   Limit 0,11" );
       $this->smarty->assign('get',$get);
       $this->smarty->display(LAYOUT_HOME);
